@@ -1,0 +1,60 @@
+#include <iostream>
+
+using namespace std;
+
+
+class Pracownik{
+	
+	private:
+		int pesel;
+	
+	public:
+		int id;
+		string imie;
+		string nazwisko;
+		string stanowisko;
+	
+		
+		
+		ustawPersonalia(string Nimie,string Nnazwisko,int Npesel){
+		
+			imie = Nimie;
+			nazwisko = Nnazwisko;
+			pesel= Npesel;
+		};
+	
+	/* ****************************************************
+
+** Autor: Bogumil Partyka
+
+** Metoda ma przypisać podane wskaźnika parametru stanowisko 
+
+************************************************** */
+	
+		ustawStanowisko(string& Nstanowisko){
+			stanowisko = Nstanowisko;
+		}
+	
+		void wyswietl_personalia(){
+		 cout<<imie<<nazwisko<<pesel;
+		}
+		void wyswietl_stanowisko(){
+			cout<<stanowisko;
+		}
+		void wyswietlDane(){
+			 cout<<imie<<nazwisko<<pesel<<stanowisko;
+		}
+};
+
+
+
+int main(){
+	
+	Pracownik pracownik;
+	pracownik.ustawPersonalia("imie","nazwisko",12345678901);
+	pracownik.ustawStanowisko("Stanowisko");
+	pracownik.wyswietlDane();
+	
+	
+	return 0;
+}
